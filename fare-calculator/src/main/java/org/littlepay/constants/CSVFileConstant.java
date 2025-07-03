@@ -1,8 +1,7 @@
 package org.littlepay.constants;
 
-public class FileConstant {
+public class CSVFileConstant {
     public static final char SEPARATOR = ',';
-    public static final char QUOTE_CHAR = '\"';
     public static final char ESCAPE_CHAR = '\\';
 
     //File Columns Names

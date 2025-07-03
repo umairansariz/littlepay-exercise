@@ -2,6 +2,7 @@ package org.littlepay.services;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.littlepay.enums.TapTypeEnum;
 import org.littlepay.exceptions.ApplicationException;
 import org.littlepay.model.Tap;
 
@@ -34,7 +35,7 @@ class TapReaderServiceTest {
 
         Tap tap = taps.getFirst();
         assertEquals("Stop1", tap.getStopId());
-        assertEquals("ON", tap.getTapType());
+        assertEquals(TapTypeEnum.ON, tap.getTapType());
     }
 
     @Test
