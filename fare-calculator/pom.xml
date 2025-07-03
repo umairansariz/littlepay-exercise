@@ -24,8 +24,6 @@
             <version>${spring.boot.version}</version>
         </dependency>
 
-
-
         <!-- Lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -39,6 +37,13 @@
             <groupId>com.opencsv</groupId>
             <artifactId>opencsv</artifactId>
             <version>5.9</version>
+        </dependency>
+
+        <!-- Apache commons-->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.17.0</version>
         </dependency>
 
         <!-- Spring Boot Test -->
@@ -62,11 +67,29 @@
                 </configuration>
             </plugin>
 
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.4.1</version> <configuration>
+                <archive>
+                    <manifest>
+                        <mainClass>org.littlepay.FareCalculatorApplication</mainClass>
+                    </manifest>
+                </archive>
+            </configuration>
+            </plugin>
+
             <!-- Spring Boot Plugin -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring.boot.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal> </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
