@@ -7,7 +7,7 @@ A java based application that reads passenger tap on and tap off data from a csv
 
 - Parses taps (ON and OFF) from `taps.csv`
 - Matches taps into trips (COMPLETED, CANCELLED, INCOMPLETE)
-- Calculates fare based on predefined rare rules
+- Calculates fare based on predefined fare rules
 - Outputs a `trips.csv` file with trip summaries
 
 ## Tech Stack
