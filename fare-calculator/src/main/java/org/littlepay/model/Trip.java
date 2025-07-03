@@ -8,6 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.littlepay.enums.TripStatusEnum;
 import org.littlepay.util.BigDecimalConverter;
+import org.littlepay.util.LocalDateTimeConverter;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -17,10 +18,10 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Builder
 public class Trip {
-    @CsvBindByName(column = "Started")
+    @CsvCustomBindByName(column = "Started", converter = LocalDateTimeConverter.class)
     private LocalDateTime started;
 
-    @CsvBindByName(column = "Finished")
+    @CsvCustomBindByName(column = "Finished", converter = LocalDateTimeConverter.class)
     private LocalDateTime finished;
 
     @CsvBindByName(column = "DurationSecs")

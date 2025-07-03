@@ -34,7 +34,7 @@ public class FareCalculatorApplication {
                 List<Trip> trips = tripProcessorService.processTapsData(taps);
                 tripWriterService.writeTripsToCSV(outputFilePath, trips);
 
-                log.info("Processing taps from: {}", inputFilePath);
+                log.info("Added calculated trips in: {}", outputFilePath);
             } catch(ApplicationException e){
                 log.error("Error in Application -> detail: {}", e.getMessage());
             }
