@@ -28,9 +28,11 @@ A java based application that reads passenger tap on and tap off data from a csv
 
 ## Running the App
 Note:
-OpenCSV’s @CsvBindByName annotation does not preserve column order when writing CSV files, which can cause issues with field-level conversions (e.g., custom converters like BigDecimalConverter).
+OpenCSV’s @CsvBindByName annotation does not preserve column order when writing CSV files — a known limitation of the library.
 
-To address this, I’ve applied a column mapping strategy to enforce a specific column order.
+To ensure a consistent column order in the output (e.g., trips.csv), a custom column mapping strategy was applied. However, this approach disables field-level custom converters (e.g., BigDecimalConverter) during write operations.
+
+While there are workarounds available, such as manually mapping and formatting fields during CSV writing — these were not implemented due to time constraints during the coding exercise.
 
 1. Clone the Project:
 git clone https://github.com/umairansariz/littlepay-exercise.git
